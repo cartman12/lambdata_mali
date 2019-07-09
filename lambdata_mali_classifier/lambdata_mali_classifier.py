@@ -1,4 +1,7 @@
 def fit(X_train, y_train):
+  from sklearn.metrics import accuracy_score
+  import pandas as pd
+
   data = X_train.copy()
   assert len(data) == len(y_train)
   y_train = pd.DataFrame(list(y_train))
@@ -31,6 +34,9 @@ def fit(X_train, y_train):
       
   return accuracy_score(y_train, predictions), glb_maj_dict
 def predict(X_test,y_test,glb_maj_dict):
+  from sklearn.metrics import accuracy_score
+  import pandas as pd
+
   predictions = []
   data = X_test.copy()
   data.index = range(len(data))
